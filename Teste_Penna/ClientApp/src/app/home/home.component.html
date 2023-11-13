@@ -1,0 +1,32 @@
+<h1>Calculo CDB</h1>
+<p>Taxa CDI: 108%</p>
+<p>Taxa TB: 0,9%</p>
+<div class="painel-form">
+  <div class="panel-form-fields">
+    <form [formGroup]="formFields" (submit)="onSubmit($event)">
+      <mat-form-field class="example-full-width">
+        <mat-label>Valor Inicial</mat-label>
+        <span matPrefix>R$ &nbsp;</span>
+        <input type="number" matInput placeholder="0,00" formControlName="valorInicial">
+      </mat-form-field>
+      <br/><br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>Meses</mat-label>
+        <input type="number" matInput placeholder="0" formControlName="meses">
+      </mat-form-field>
+      <br/><br/>
+      <div class="center">
+      <button mat-raised-button color="primary" class="button-submit">Simular Investimento</button>
+      </div>
+    </form>
+  </div>
+  <div class="painel-form-resultado">
+    <ng-container *ngIf="valorbruto">
+      <p>Em <b>{{ meses }}</b> você teria:</p>
+      <p>Valor Bruto: <b>{{ valorbruto | currency : 'BRL' }}</b></p>
+      <p>Valor Liquido: <b>{{ valorliquido | currency : 'BRL' }}</b></p>
+      <p>Imposto Aliquota: <b>{{ aliquotaImposto | percent:'1.1-1' }}</b></p>
+      <p>Imposto Valor: <b>{{ valorImposto | currency : 'BRL' }}</b></p>
+    </ng-container>
+  </div>
+</div>

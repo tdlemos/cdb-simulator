@@ -1,0 +1,39 @@
+
+.painel-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.painel-form-resultado {
+  height: 285px;
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: rgb(246, 248, 251);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.panel-form-fields {
+  padding-right: 30px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+.button-submit {
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
