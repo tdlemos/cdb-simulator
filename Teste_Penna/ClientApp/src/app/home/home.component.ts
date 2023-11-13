@@ -43,10 +43,10 @@ export class HomeComponent {
     this.cdbService.getPosts(request)
       .subscribe(res => {
         this.meses = meses;
-        this.valorbruto = res.valorFinal;
-        this.valorliquido = res.valorFinal - res.impostoValor;
-        this.valorImposto = res.impostoValor;
-        this.aliquotaImposto = res.impostoAliquota;
+        this.valorbruto = res.ValorFinal;
+        this.valorliquido = res.ValorFinal - res.ImpostoValor;
+        this.valorImposto = res.ImpostoValor;
+        this.aliquotaImposto = res.ImpostoAliquota;
       });
   }
 }

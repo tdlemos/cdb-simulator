@@ -26,10 +26,6 @@ export class CdbService {
   }))
   }
 
-  private handleError(err: any) {
-
-  }
-
 }
 
 export interface CalculoCDBRequest {
@@ -38,10 +34,10 @@ export interface CalculoCDBRequest {
 }
 
 export interface CalculoCDBResponse {
-  tb: number;
-  cdi: number;
-  valorFinal: number;
-  impostoAliquota: number;
-  impostoValor: number;
-  meses: any;
+  TB: number;
+  CDI: number;
+  ValorFinal: number;
+  ImpostoAliquota: number;
+  ImpostoValor: number;
+  Meses: any;
 }

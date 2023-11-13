@@ -7,23 +7,23 @@ namespace Teste_Penna.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CDBController : Controller
+public class CdbController : Controller
 {
-    private readonly ICDBService _dbService;
+    private readonly ICdbService _dbService;
 
-    public CDBController(ICDBService dbService)
+    public CdbController(ICdbService dbService)
     {
         _dbService = dbService;
     }
 
     [HttpGet, Route("calcular")]
-    public CalculoCDBResponse CalcularCDBGet([FromQuery] CalculoCDBRequest request)
+    public CalculoCdbResponse CalcularCDBGet([FromQuery] CalculoCdbRequest request)
     {
         return _dbService.CalcularCDB(request);
     }
 
     [HttpPost, Route("calcular")]
-    public CalculoCDBResponse CalcularCDBPost([FromBody] CalculoCDBRequest request)
+    public CalculoCdbResponse CalcularCDBPost([FromBody] CalculoCdbRequest request)
     {
         return _dbService.CalcularCDB(request);
     }

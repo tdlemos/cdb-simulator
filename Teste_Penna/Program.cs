@@ -5,7 +5,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<ICDBService, CDBService>();
+builder.Services.AddScoped<ICdbService, CdbService>();
+builder.Services.AddMvc()
+    .AddJsonOptions(x =>
+    {
+        x.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 
 var app = builder.Build();
 
@@ -27,11 +37,11 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors("AllowOrigin");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-
-app.MapFallbackToFile("index.html"); ;
+app.MapFallbackToFile("index.html");
 
 app.Run();

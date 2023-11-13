@@ -1,6 +1,6 @@
 ﻿namespace Teste_Penna.Model;
 
-public class CalculoCDBMesesResponse
+public class CalculoCdbMesesResponse
 {
     public int Mes { get; set; }
     public double ValorFinal { get; set; }

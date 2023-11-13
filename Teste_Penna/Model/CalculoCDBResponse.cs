@@ -1,6 +1,6 @@
 ﻿namespace Teste_Penna.Model;
 
-public class CalculoCDBResponse
+public class CalculoCdbResponse
 {
     public double TB { get; set; }
     public double CDI { get; set; }
@@ -8,9 +8,9 @@ public class CalculoCDBResponse
     public double ImpostoAliquota { get; set; }
     public double ImpostoValor { get; set; }
 
-    public List<CalculoCDBMesesResponse> Meses { get; set; } = new List<CalculoCDBMesesResponse>();
+    public List<CalculoCdbMesesResponse> Meses { get; set; } = new List<CalculoCdbMesesResponse>();
 
-    public CalculoCDBResponse(int meses, double valorInicial, double tb, double cdi)
+    public CalculoCdbResponse(int meses, double valorInicial, double tb, double cdi)
     {
         double valorAtual = valorInicial;
         TB = tb;
@@ -19,7 +19,7 @@ public class CalculoCDBResponse
         {
             double valorFinal = valorAtual * (1 + (cdi * tb));
             var imposto = CalcularImposto(i, valorInicial, valorFinal);
-            Meses.Add(new CalculoCDBMesesResponse
+            Meses.Add(new CalculoCdbMesesResponse
             {
                 Mes = i,
                 ValorFinal = valorFinal,

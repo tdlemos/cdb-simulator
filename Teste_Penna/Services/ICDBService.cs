@@ -1,7 +1,7 @@
 ﻿using Teste_Penna.Model;
 
 namespace Teste_Penna.Services;
-public interface ICDBService
+public interface ICdbService
 {
-    CalculoCDBResponse CalcularCDB(CalculoCDBRequest request);
+    CalculoCdbResponse CalcularCDB(CalculoCdbRequest request);
 }
